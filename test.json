@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "默认模块",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {},
+  "components": {
+    "schemas": {
+      "test": {
+        "type": "object",
+        "properties": {
+          "Advance": {
+            "type": "object",
+            "properties": {
+              "FlagIsoZoneCheck": {
+                "type": "string",
+                "title": "孤立区域检查",
+                "description": "开启后可以输出孤立区域ID的DAG文件，检查铸件区域是否完全联通",
+                "default": "OFF"
+              },
+              "FlagSharedMemory": {
+                "type": "string",
+                "title": "共享内存开关",
+                "description": "开启后可以降低内存消耗",
+                "default": "OFF"
+              }
+            },
+            "required": [
+              "FlagIsoZoneCheck",
+              "FlagSharedMemory"
+            ]
+          }
+        },
+        "required": [
+          "Advance"
+        ]
+      }
+    },
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
