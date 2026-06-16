@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.1.0",
   "info": {
     "title": "默认模块",
     "description": "",
@@ -7,8 +7,62 @@
   },
   "tags": [],
   "paths": {},
+  "webhooks": {},
   "components": {
     "schemas": {
+      "dd": {
+        "type": "object",
+        "properties": {
+          "CompMode": {
+            "type": "string",
+            "default": "NormalMesh"
+          },
+          "FlowType": {
+            "type": "string",
+            "default": "Instaneous"
+          },
+          "PathNameCalData": {
+            "type": "string",
+            "default": "./CAL_DATA",
+            "description": "计算结果输出路径"
+          },
+          "PathNameCalInfo": {
+            "type": "string",
+            "default": "./CAL_INFO",
+            "description": "计算日志输出路径"
+          },
+          "PathNameLoadModel": {
+            "type": "string",
+            "default": "./Ply",
+            "description": "模型路径"
+          },
+          "PathNameMesh": {
+            "type": "string",
+            "default": "./MESH_DATA/Flow_Mesh",
+            "description": "计算加载网格文件路径"
+          },
+          "SteadyMethod": {
+            "type": "string",
+            "default": "SteadyByRho"
+          },
+          "SteadyTol": {
+            "type": "number",
+            "format": "double",
+            "default": 5e-12
+          }
+        },
+        "required": [
+          "CompMode",
+          "FlowType",
+          "PathNameCalData",
+          "PathNameCalInfo",
+          "PathNameLoadModel",
+          "PathNameMesh",
+          "SteadyMethod",
+          "SteadyTol"
+        ],
+        "description": "基本设置参数"
+      },
       "test": {
         "type": "object",
         "properties": {
