@@ -1,10 +1,11 @@
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: 默认模块
   description: ''
   version: 1.0.0
 tags: []
 paths: {}
+webhooks: {}
 components:
   schemas:
     dd:
@@ -48,7 +49,18 @@ components:
         - PathNameMesh
         - SteadyMethod
         - SteadyTol
+      x-apifox-orders:
+        - CompMode
+        - FlowType
+        - PathNameCalData
+        - PathNameCalInfo
+        - PathNameLoadModel
+        - PathNameMesh
+        - SteadyMethod
+        - SteadyTol
       description: 基本设置参数
+      x-apifox-ignore-properties: []
+      x-apifox-folder: dklhfjk
     test:
       type: object
       properties:
@@ -68,8 +80,16 @@ components:
           required:
             - FlagIsoZoneCheck
             - FlagSharedMemory
+          x-apifox-orders:
+            - FlagIsoZoneCheck
+            - FlagSharedMemory
+          x-apifox-ignore-properties: []
       required:
         - Advance
+      x-apifox-orders:
+        - Advance
+      x-apifox-ignore-properties: []
+      x-apifox-folder: ''
   responses: {}
   securitySchemes: {}
 servers: []
